@@ -3,20 +3,21 @@
 const text = Astro.props.text; */
 
 /* Dette er funktionel 100% det samme som ovenover, det handler bare om hvilken man synes er lækrest at læse*/
-const { header } = Astro.props;
+const { header, soldOut } = Astro.props;
 ---
 
 <article class="card">
-    <h2>{header}</h2>
-    <p>kortere lorem ipsum</p>
-    <slot />
+  <h2>{header}</h2>
+  {soldOut && <p>UDSOLGT</p>}
+  <p>kortere lorem ipsum</p>
+  <slot />
 </article>
 
 <style>
-    p {
-        color: crimson;
-    }
-    .card {
-        background-color: blanchedalmond;
-    }
+  p {
+    color: crimson;
+  }
+  .card {
+    background-color: blanchedalmond;
+  }
 </style>
